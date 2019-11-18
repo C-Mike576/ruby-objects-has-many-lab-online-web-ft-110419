@@ -6,26 +6,25 @@ class Artist
   
   def initialize(name)
     @name = name
-    @songs = []
+   # @songs = []
   end
   
   
   def add_song(song)
-    @songs << song
+   # @songs << song
     song.artist = self
     
   end
   
   def songs
-    Song.all.each do |title|
-      title.artist == self.name
+    Song.all.select { |title| title.artist == self.name }
       
     
   end
   
   def add_song_by_name(song_name)
     song = Song.new(song_name)
-    @songs << song
+   # @songs << song
     song.artist = self
     
   end
