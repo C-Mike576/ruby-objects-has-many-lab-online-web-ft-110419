@@ -16,6 +16,13 @@ class Artist
     
   end
   
+  def songs
+    Song.all.each do |title|
+      title.artist == self.name
+      
+    
+  end
+  
   def add_song_by_name(song_name)
     song = Song.new(song_name)
     @songs << song
