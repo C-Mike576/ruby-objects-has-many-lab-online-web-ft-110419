@@ -1,7 +1,7 @@
 require './lib/song.rb'
 
 class Artist 
-  attr_accessor :name, :songs
+  attr_accessor :name
   
   
   def initialize(name)
@@ -17,7 +17,7 @@ class Artist
   end
   
   def songs
-    Song.all.select { |title| title.artist == self.name }
+    @songs = Song.all.select { |title| title.artist == self.name }
       
     
   end
